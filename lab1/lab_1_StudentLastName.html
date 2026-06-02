@@ -7879,12 +7879,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">data.training_sample</span><span class="w"> </span><span class="kn">import</span> <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span>
 
-<span class="n">x_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"x1"</span><span class="p">,</span> <span class="s2">"x2"</span><span class="p">])</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"class"</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_train</span>
 
@@ -8003,6 +8000,8 @@ a.anchor-link {
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Реалізація перцептрона Розенблатта для 2D-ознак</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 <span class="n">n_train</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">200</span>               <span class="c1"># максимальна кількість ітерацій (епох)</span>
 <span class="n">L</span> <span class="o">=</span> <span class="mf">0.1</span>               <span class="c1"># крок навчання</span>
@@ -8110,7 +8109,7 @@ a.anchor-link {
 <p>Навчальна вибірка це пари $(x_i, y_i)$, де $x$ - матриця ознак об'єктів, $y$ - клас об'єкта. В алгоритмах навчання з вчителем, які використовуються для задач класифікації і задач регресії необхідна навчальна вибірка, щоб вивчити закономірність відомих пар ознак і класів.</p>
 </li>
 <li><p>Зформулювати постановку задачі бінарної класифікації.</p>
-<p>Задача бінарної класифікації полягає в тому, щоб побудувати гіперплощину в $n$-вимірному просторі ознак, з якою усі об'єкти одного класу мають знаходитися з одного боку гіперплощини, а всі об'єкти іншого класу — з іншого боку</p>
+<p>Задача бінарної класифікації полягає в тому, щоб побудувати межу в $n$-вимірному просторі ознак, з якою усі об'єкти одного класу мають знаходитися з одного боку межі, а всі об'єкти іншого класу — з іншого боку. Для лінійних моделей це буде гіперплощина, для не	лінійних - більш складні форми межі.</p>
 </li>
 <li><p>Що таке рівняння гіперплощини і як воно використовується для розв’язання задачі бінарної класифікації?</p>
 <p>Рівняння гіперплощини — це лінійне рівняння виду $\omega^T x = 0$, яке описує межу розділення між класами у просторі ознак. Потрібно підібрати такий вектор $\omega$, щоб гіперплощина якнайкраще розділяла об’єкти класів із навчальної вибірки.</p>
